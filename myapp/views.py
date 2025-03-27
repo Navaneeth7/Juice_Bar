@@ -56,6 +56,12 @@ def login_user(request):
     
     return render(request, 'login.html',{'data':data})
 
+#old code
+def logout_user(request):
+    logout(request)
+    return render(request,'homepage.html')
+
+#new code
 def logout_user(request):
     logout(request)
     return redirect('myapp:homepage')
