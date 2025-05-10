@@ -23,8 +23,8 @@ import cloudinary.api
 #Cloudinary Config
 import os
 
-#TEMPLATE_DIR=os.path.join(BASE_DIR,'template')
-#BASE_DIR = Path(__file__).resolve().parent.parent
+# TEMPLATE_DIR=os.path.join(BASE_DIR,'template')
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
@@ -119,6 +119,7 @@ WSGI_APPLICATION = 'juiceBar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+#Default and local Database connection
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -126,22 +127,36 @@ WSGI_APPLICATION = 'juiceBar.wsgi.application'
 #     }
 # }
 
+#Railway first Deployment Database Connection through Mysql
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',
+#         'USER': 'root',
+#         'PASSWORD': 'WHuGBLzDylJuGPrjGQjQmovWKESeePLw',
+#         'HOST': 'nozomi.proxy.rlwy.net',
+#         'PORT': '50280',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+#     }
+# }
+#AUTH_USER_MODEL = 'myapp.CustomUser'
+
+#Railway 2nd time deployment Models(database connection)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'WHuGBLzDylJuGPrjGQjQmovWKESeePLw',
-        'HOST': 'nozomi.proxy.rlwy.net',
-        'PORT': '50280',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'PASSWORD': 'okhXXgMWSroOdzMQBdHwSlcJbgXUNcTU',
+        'HOST': 'mainline.proxy.rlwy.net',
+        'PORT': '20697',
     }
 }
 
+AUTH_USER_MODEL = 'myapp.CustomUser'  # Must match your app and model name exactly
 
-AUTH_USER_MODEL = 'myapp.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
