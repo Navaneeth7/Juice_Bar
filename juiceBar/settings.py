@@ -155,12 +155,13 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             'connect_timeout': 10,
-            'read_timeout': 30,
-            'write_timeout': 30,
+            'read_timeout': 20,
+            'write_timeout': 20,
             'autocommit': True,
         },
     }
 }
+
 
 AUTH_USER_MODEL = 'myapp.CustomUser'  # Must match your app and model name exactly
 
