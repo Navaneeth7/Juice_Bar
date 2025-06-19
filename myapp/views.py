@@ -13,11 +13,18 @@ from django.http import JsonResponse
 from .models import ImageUpload
 from .forms import ImageUploadForm
 from django.views.decorators.cache import never_cache
-
+from django.db import OperationalError, connection
 
 def homepage(request):
-    data = Categories.objects.all()
-    return render(request, 'homepage.html', {'data': data})
+    try:
+        data = Categories.objects.all()
+        return render(request, 'homepage.html', {'data': data})
+    except OperationalError:
+        connection.close()  # Ensure broken connection is closed
+        return render(request, 'homepage.html', {
+            'data': [],
+            'error': 'Database connection lost. Please refresh the page.'
+        })
 
 # def signup(request):
 #     data=" "
