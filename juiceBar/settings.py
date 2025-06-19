@@ -152,6 +152,13 @@ DATABASES = {
         'PASSWORD': 'okhXXgMWSroOdzMQBdHwSlcJbgXUNcTU',
         'HOST': 'mainline.proxy.rlwy.net',
         'PORT': '20697',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'connect_timeout': 10,
+            'read_timeout': 30,
+            'write_timeout': 30,
+            'autocommit': True,
+        },
     }
 }
 
