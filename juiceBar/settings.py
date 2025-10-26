@@ -149,16 +149,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'okhXXgMWSroOdzMQBdHwSlcJbgXUNcTU',
-        'HOST': 'mainline.proxy.rlwy.net',
-        'PORT': '20697',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'connect_timeout': 10,
-            'read_timeout': 20,
-            'write_timeout': 20,
-            'autocommit': True,
-        },
+        # 'PASSWORD': 'okhXXgMWSroOdzMQBdHwSlcJbgXUNcTU',
+        # 'HOST': 'mainline.proxy.rlwy.net',
+        # 'PORT': '20697',
+        'PASSWORD': 'dGTVNDqHxAifZivwgKNopSgzTujXLljU',
+        'HOST': 'hopper.proxy.rlwy.net',
+        'PORT': '40648',
     }
 }
 
